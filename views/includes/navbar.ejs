@@ -1,0 +1,40 @@
+<nav class=" shadow-sm  navbar navbar-expand-md bg-body-light">
+  <div class="container-fluid">
+    <a class="navbar-brand app-name" href="/listing">
+      <i class="fa-solid fa-paper-plane brand-icon"></i>
+      <span class="brand-text">
+        Trip<span class="highlight">Nest</span>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listing">Explore</a>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <% if(currPath !== "/login" && currPath !== "/signup" && !currPath.startsWith("/listing/")) { %>
+        <form class="d-flex" role="search" action="/listing">
+          <input class="form-control me-2 search-inp" name="search" type="search" placeholder="Search Destination" aria-label="Search" />
+          <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        </form>
+        <% } %>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listing/add">TripNest your place</a>
+        <% if(!user) { %>
+        <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+        <a class="nav-link" href="/login"><b>Log In</b></a>
+        <% } %>
+        <% if(user) { %>
+        <a class="nav-link" href="/logout"><b>Log Out</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+

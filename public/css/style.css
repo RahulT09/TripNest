@@ -1,0 +1,318 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  z-index: 101;
+}
+
+.app-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  font-size: 1.6rem;
+  color: #e63946;
+  transition: transform 0.3s ease;
+}
+
+.app-name:hover .brand-icon {
+  transform: rotate(-15deg) scale(1.1);
+}
+
+.brand-text {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.highlight {
+  color: #e63946;
+}
+
+.fa-studiovinari {
+  font-size: 2rem;
+  color: #e63946;
+}
+
+.footer-info {
+  vertical-align: center;
+  text-align: center;
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+.f-social,
+.f-terms,
+.f-name {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.f-terms a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.f-terms a:hover {
+  text-decoration: underline;
+}
+
+.f-social i {
+  font-size: 1.2rem;
+}
+
+.detail-card {
+  background-color: inherit;
+}
+
+.listing-card,
+.detail-card {
+  border: none !important;
+  /* object-fit: cover; */
+  /* width: 100%; */
+  /* overflow:-y hidden !important; */
+}
+
+.card-img-top {
+  border-radius: 1rem;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.listing-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.listing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.detail-img {
+  width: 100%;
+  height: 45vh;
+}
+.btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-img {
+  width: 100%;
+  height: 20rem;
+  max-height: 20rem;
+  object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .home-img {
+    height: 12rem;
+  }
+}
+
+.app-name {
+  margin-left: 0.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 1.6rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Dark golden hover */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #d4a017; /* dark gold */
+  transform: scale(1.2);
+}
+
+/* Selected stars */
+.star-rating input:checked ~ label {
+  color: #d09d1d; /* darker golden shade */
+}
+
+/* Smooth click animation */
+.star-rating input:checked + label {
+  animation: pop 0.3s ease;
+}
+
+/* Pop animation */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card {
+  background-color: inherit;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  height: auto;
+}
+
+.star-display i {
+  color: #daa520;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 420px; /* controls card size */
+  margin: 80px auto; /* centers the card horizontally */
+  padding: 25px;
+
+  border-radius: 14px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.signup-card input {
+  width: 100%;
+}
+.signup-card button {
+  width: 100%;
+}
+
+.signup-card .input-group {
+  width: 100%;
+}
+
+.signup-card .col {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.listing-preview {
+  max-height: 100px;
+  object-fit: cover;
+  width: 25%;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.category-bar {
+  padding: 15px 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+.categories {
+  overflow-x: auto;
+}
+
+.category {
+  min-width: 90px;
+  cursor: pointer;
+  color: #555;
+}
+
+.category i {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.category p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.category:hover {
+  color: black;
+}
+
+.search-btn {
+  background-color: #e63946;
+  color: #fff;
+  border-radius: 25px;
+}
+
+.btn-search:hover {
+  background-color: #e63946;
+  color: #fff;
+}
+
+.search-btn i {
+  display: inline;
+  font-size: medium;
+  margin-right: 0.5rem;
+}
+
+.search-inp {
+  border-radius: 25px;
+  padding: 0.5rem 3rem;
+}
+
+.price b,
+.price .gstText {
+  display: inline;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .price .gstText {
+     display: inline;
+    font-size: 0.65em; /* adjust as needed */
+    white-space: nowrap; /* keep it on same line */
+  }
+}

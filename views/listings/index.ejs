@@ -1,0 +1,20 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<div class="container mt-4" style="z-index: 1;">
+  <div class="row g-4 justify-content-center  row-cols-2 row-cols-md-2 row-cols-lg-3">
+    <% for(data of allData){ %>
+    <a href="/listing/<%= data._id %>" class="listing-link">
+      <div class="col listing-card h-100" style="width:20 rem;">
+        <img src="<%= data.image.url %>" class="card-img-top home-img" alt="...">
+        <div class="card-body p-2">
+          <h6 class="card-text"><%= data.title %></h6>
+          <span class="price">
+            <p class="card-text"><b>&#8377;<%=data.price.toLocaleString("en-IN")%>/Night</b>&nbsp; <i class="gstText" style="font-size: 0.8em;">+18% GST</i></p>
+          </span>
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
+</div>

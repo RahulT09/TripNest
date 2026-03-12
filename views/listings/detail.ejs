@@ -1,0 +1,120 @@
+<% layout("/layouts/boilerplate") %>
+<script>
+  const coord = <%-JSON.stringify(databyId)%>;
+</script>
+
+<div class="row justify-content-center">
+
+  <div class="card col-12 col-md-11 col-lg-8 detail-card">
+    <h1 class="mb-4 mt-3"><%= databyId.title %></h1>
+    <img src="<%= databyId.image.url %>" class="card-img-top detail-img" alt="...">
+    <div class="card-body mb-3 mt-2">
+      <p class="card-text">Posted By : <strong><i><%= databyId.owner ? databyId.owner.username : "Unknown" %></i></strong> &nbsp; <span class="text-muted">•</span>
+        <span class="text-muted"><%= timeAgo %></span>
+      </p>
+      <p class="card-text"><%= databyId.description %></p>
+      <p class="card-text"> &#8377;<%= databyId.price.toLocaleString("en-IN")%>/Night</p>
+      <p class="card-text"> <%= databyId.location %>, <%= databyId.country %></p>
+    </div>
+    <% if(user && user._id.equals(databyId.owner._id)) { %>
+    <div class="row">
+      <div class="col-auto">
+        <button class="btn btn-dark"><a href="/listing/<%= databyId._id %>/edit">Edit</a></button>
+      </div>
+      <div class="col-auto ">
+        <form method="post" action="/listing/<%= databyId._id %>?_method=DELETE"><button class="btn btn-danger">Delete</button></form>
+      </div>
+    </div>
+    <% } %>
+
+    <hr>
+    <% if(user) { %>
+    <div class="col-12 ">
+      <form action="/listing/<%=databyId._id %>/review" method="post" novalidate class="needs-validation">
+        <h4>Leave a Review</h4>
+        <div class="mb-3">
+          <label class="form-label">Rating</label>
+
+          <div class="star-rating d-flex flex-row-reverse justify-content-end">
+
+            <input type="radio" name="review[rating]" id="star5" value="5">
+            <label for="star5"><i class="fa-solid fa-star"></i></label>
+
+            <input type="radio" name="review[rating]" id="star4" value="4">
+            <label for="star4"><i class="fa-solid fa-star"></i></label>
+
+            <input type="radio" name="review[rating]" id="star3" value="3">
+            <label for="star3"><i class="fa-solid fa-star"></i></label>
+
+            <input type="radio" name="review[rating]" id="star2" value="2">
+            <label for="star2"><i class="fa-solid fa-star"></i></label>
+
+            <input type="radio" name="review[rating]" id="star1" value="1">
+            <label for="star1"><i class="fa-solid fa-star"></i></label>
+
+          </div>
+        </div>
+        <div class="mb-3 col-md-6 col-lg-6 col-sm-2
+            <label for=" comment" class="form-label">Comment</label>
+          <textarea name="review[comment]" id="comment" class="form-control" required></textarea>
+          <div class="invalid-feedback">please leave a Comment</div>
+        </div>
+        <button class="btn btn-outline-dark mb-3">Submit</button>
+      </form>
+      <hr>
+    </div>
+    <% } %>
+  </div>
+</div>
+<div class="row justify-content-center align-items-start">
+  <% if(databyId.reviews.length>0) { %>
+  <h3 class="text-center">Reviews</h3> <br>
+  <% for(review of databyId.reviews) { %>
+  <div class="col-12 col-lg-5 mb-4 me-2 review-card">
+    <div class="card-body p-2">
+      <p class="card-title"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;&nbsp;<%= review.author.username %> &nbsp;<small> <span class="text-muted">• </span> <%= dayjs(review.createdAt).fromNow() %></small></p>
+      <div class="ps-auto">
+        <div class="text-warning">
+          <% for(let i = 0; i < review.rating; i++) { %>
+          <i class="fas fa-star"></i>
+          <% } %>
+          <% for(let i = review.rating; i < 5; i++) { %>
+          <i class="far fa-star"></i>
+          <% } %>
+        </div>
+        <p class="review-comment">
+          <span class="short-text">
+            <%= review.comment.substring(0, 100) %>
+          </span>
+
+          <% if(review.comment.length > 100) { %>
+          <span class="full-text d-none">
+            <%= review.comment %>
+
+          </span>
+          <span class="see-more text-primary" style="cursor: pointer;">
+            ... See more
+          </span>
+          <% } %>
+        </p>
+      </div>
+      <% if(user && user._id.equals(review.author._id)) { %>
+      <form method="post" action="/listing/<%= databyId._id %>/review/<%= review._id %>?_method=DELETE">
+        <button class="btn btn-outline-danger btn-sm">
+          <i class="fa-solid fa-trash"></i> Delete
+        </button>
+      </form>
+      <% } %>
+    </div>
+  </div>
+  <% } %>
+  <% } %>
+</div>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-11 col-lg-8">
+    <h3>Where you,ll be</h3>
+    <div id="map">
+
+    </div>
+  </div>
+</div>

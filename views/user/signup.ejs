@@ -1,0 +1,32 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row justify-content-center signup-card">
+  <div class="col col-lg-4 col-md-6 col-sm-10">
+    <h5 class="text-center mb-3">SignUp&nbsp; on &nbsp; <span style="letter-spacing: 0.3rem;">TRIP<span style="color: #E63946;">NEST</span></span></h5>
+    <form action="/signup" method="post" class="needs-validation" novalidate>
+
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter Username" class="form-control" required>
+        <div class="invalid-feedback">Looks Good</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter Email" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+          <input type="password" id="password" name="password" placeholder="Enter password" class="form-control" required>
+          <span class="input-group-text" onclick="togglePassword()" style="cursor:pointer">
+            <i class="fa-regular fa-eye"></i>
+          </span>
+        </div>
+      </div>
+      <button class="btn btn-success mt-3 mb-3 ">Sign Up</button>
+      
+    </form>
+  </div>
+</div>

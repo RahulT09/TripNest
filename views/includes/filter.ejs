@@ -1,0 +1,116 @@
+<% if(currPath !== "/login" && currPath !== "/signup" && currPath !== "/listing/add" && !currPath.startsWith("/listing/")) { %>
+<div class="filter-bar-wrapper mb-4">
+  <div class="filter-bar-inner container-fluid px-0">
+
+    <!-- Scrollable Categories -->
+    <div class="categories-scroll" id="catScroll">
+
+      
+
+      <a class="category-item  <%= category === 'lodge' ? 'active' : '' %> " href="/listing?category=lodge">
+        <span class="cat-icon"><i class="fa-solid fa-tractor"></i></span>
+        <span class="cat-label">Farms</span>
+      </a>
+
+      <a class="category-item  <%= category === 'house' ? 'active' : '' %>" href="/listing?category=house">
+        <span class="cat-icon"><i class="fa-solid fa-bed"></i></span>
+        <span class="cat-label">Rooms</span>
+      </a>
+
+      <a class="category-item  <%= category === 'Villa' ? 'active' : '' %>" href="/listing?category=Villa">
+        <span class="cat-icon"><i class="fa-regular fa-image"></i></span>
+        <span class="cat-label">Amazing views</span>
+      </a>
+
+      <a class="category-item  <%= category === 'city' ? 'active' : '' %>" href="/listing?category=city">
+        <span class="cat-icon"><i class="fa-solid fa-building-columns"></i></span>
+        <span class="cat-label">Iconic cities</span>
+      </a>
+
+      <a class="category-item  <%= category === 'beach' ? 'active' : '' %>" href="/listing?category=beach">
+        <span class="cat-icon"><i class="fa-solid fa-water"></i></span>
+        <span class="cat-label">Surfing</span>
+      </a>
+
+      <a class="category-item  <%= category === 'villa' ? 'active' : '' %>" href="/listing?category=villa">
+        <span class="cat-icon"><i class="fa-solid fa-water-ladder"></i></span>
+        <span class="cat-label">Amazing pools</span>
+      </a>
+
+      <a class="category-item  <%= category === 'beachfront' ? 'active' : '' %>" href="/listing?category=beachfront">
+        <span class="cat-icon"><i class="fa-solid fa-umbrella-beach"></i></span>
+        <span class="cat-label">Beach</span>
+      </a>
+
+      <a class="category-item  <%= category === 'cottage' ? 'active' : '' %>" href="/listing?category=cottage">
+        <span class="cat-icon"><i class="fa-solid fa-house-chimney"></i></span>
+        <span class="cat-label">Cabins</span>
+      </a>
+
+      <a class="category-item  <%= category === 'historic' ? 'active' : '' %> " href="/listing?category=historic">
+        <span class="cat-icon"><i class="fa-solid fa-face-surprise"></i></span>
+        <span class="cat-label">OMG!</span>
+      </a>
+
+      <a class="category-item  <%= category === 'lake' ? 'active' : '' %>" href="/listing?category=lake">
+        <span class="cat-icon"><i class="fa-solid fa-water"></i></span>
+        <span class="cat-label">Lakefront</span>
+      </a>
+
+      <a class="category-item  <%= category === 'mountain' ? 'active' : '' %>" href="/listing?category=mountain">
+        <span class="cat-icon"><i class="fa-solid fa-mountain-sun"></i></span>
+        <span class="cat-label">Mountains</span>
+      </a>
+
+      <a class="category-item  <%= category === 'igloo' ? 'active' : '' %>" href="/listing?category=igloo">
+        <span class="cat-icon"><i class="fa-solid fa-igloo"></i></span>
+        <span class="cat-label">Arctic</span>
+      </a>
+
+      <a class="category-item  <%= category === 'cabin' ? 'active' : '' %>" href="/listing?category=cabin">
+        <span class="cat-icon"><i class="fa-solid fa-campground"></i></span>
+        <span class="cat-label">Camping</span>
+      </a>
+
+      <a class="category-item  <%= category === 'front' ? 'active' : '' %>" href="/listing?category=front">
+        <span class="cat-icon"><i class="fa-solid fa-sailboat"></i></span>
+        <span class="cat-label">Boats</span>
+      </a>
+
+      <a class="category-item  <%= category === 'Treehouse' ? 'active' : '' %>" href="/listing?category=Treehouse">
+        <span class="cat-icon"><i class="fa-solid fa-tree"></i></span>
+        <span class="cat-label">Treehouses</span>
+      </a>
+
+    </div>
+
+    <!-- Scroll right button -->
+    <button class="scroll-btn" id="scrollRight" aria-label="Scroll right">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Divider -->
+    <div class="bar-divider"></div>
+
+    <!-- Right Controls -->
+    <div class="bar-controls">
+
+      <!-- Filters button -->
+      <button class="btn-filters">
+        <i class="fa-solid fa-sliders"></i>
+        <span>Filters</span>
+      </button>
+
+      <!-- Display total toggle -->
+      <label class="toggle-wrap" for="taxToggle">
+        <span class="toggle-label">Display total before taxes</span>
+        <div class="toggle-switch">
+          <input type="checkbox" id="taxToggle" />
+          <span class="toggle-slider"></span>
+        </div>
+      </label>
+
+    </div>
+  </div>
+</div>
+<%  }%>

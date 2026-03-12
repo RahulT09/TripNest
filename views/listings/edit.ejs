@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+  <div class="row justify-content-center mb-4">
+    <div class="col col-lg-6 col-sm-9">
+      <h1 class="mb-4">Edit you Listing</h1>
+      <form method="post" action="/listing/<%= databyId._id %>?_method=PUT" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <div class="mb-4">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" name="listing[title]" value="<%= databyId.title %>" class="form-control" required>
+          <div class="invalid-feedback">please enter Title</div>
+        </div>
+
+        <div class="mb-4">
+          <label for="descr" class="form-label">Description</label>
+          <textarea name="listing[description]" class="form-control" required><%= databyId.description %></textarea>
+          <div class="invalid-feedback">please enter Description</div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">Original Image : </label><br>
+          <img src="<%= originalUrl %>" alt="" class="img-fluid rounded listing-preview">
+        </div>
+
+        <div class="mb-4">
+          <label for="image" class="form-label">Upload New Image</label>
+          <input type="file" name="listing[image]" value="<%= databyId.image.url %>" class="form-control">
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <label for="title" class="form-label">Price</label>
+            <input type="number" name="listing[price]" value="<%= databyId.price %>" class="form-control" required>
+            <div class="invalid-feedback">please enter Price</div>
+          </div>
+
+          <div class="col-md-8 mb-4">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" value="<%= databyId.country%>" class="form-control" required>
+            <div class="invalid-feedback">please enter Country name</div>
+          </div>
+
+
+        </div>
+
+        <div class="mb-4">
+          <label for="title" class="form-label">Location</label>
+          <input type="text" name="listing[location]" value="<%= databyId.location %>" class="form-control" required>
+          <div class="invalid-feedback">please enter valid location</div>
+        </div>
+
+
+        <button class="btn  btn-success mb-4">Done</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>

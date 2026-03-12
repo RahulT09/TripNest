@@ -1,0 +1,247 @@
+.filter-bar-wrapper {
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.filter-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* ─── Scrollable category list ─── */
+.categories-scroll {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex: 1;
+  gap: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 4px;
+}
+.categories-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Each category item ─── */
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 16px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition:
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+  opacity: 0.65;
+  min-width: 72px;
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.category-item:hover {
+  opacity: 1;
+  border-bottom-color: #717171;
+}
+
+.category-item.active {
+  opacity: 1;
+  border-bottom-color: #222;
+}
+
+.category-item .cat-icon {
+  font-size: 22px;
+  color: #222;
+  line-height: 1;
+}
+
+.category-item .cat-label {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #222;
+  letter-spacing: 0.01em;
+}
+
+/* ─── SVG-style custom icons using FA combos ─── */
+.icon-stack {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Scroll arrow button ─── */
+.scroll-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #222;
+  transition: box-shadow 0.15s ease;
+  margin: 0 4px;
+}
+.scroll-btn:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── Divider ─── */
+.bar-divider {
+  width: 1px;
+  height: 32px;
+  background: #e0e0e0;
+  flex-shrink: 0;
+  margin: 0 16px;
+}
+
+/* ─── Right controls ─── */
+.bar-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ─── Filters button ─── */
+.btn-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 9px 16px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: box-shadow 0.15s ease;
+  font-family: "DM Sans", sans-serif;
+}
+.btn-filters:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.btn-filters i {
+  font-size: 15px;
+}
+
+/* ─── Toggle switch ─── */
+.toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 9px 16px;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+}
+.toggle-wrap:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.toggle-switch input {
+  display: none;
+}
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: #e0e0e0;
+  border-radius: 34px;
+  transition: background 0.25s;
+  cursor: pointer;
+}
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.25s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.toggle-switch input:checked + .toggle-slider {
+  background: #222;
+}
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(18px);
+}
+
+/* ─── Responsive: hide toggle label on small screens ─── */
+@media (max-width: 768px) {
+  .filter-bar-wrapper {
+    padding: 0 12px;
+  }
+  .bar-divider {
+    margin: 0 8px;
+  }
+  .toggle-label {
+    display: none;
+  }
+  .toggle-wrap {
+    padding: 9px 10px;
+  }
+  .btn-filters span {
+    display: none;
+  }
+  .btn-filters {
+    padding: 9px 10px;
+  }
+  .category-item {
+    padding: 12px 10px 8px;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-wrap {
+    display: none;
+  }
+  .bar-divider {
+    display: none;
+  }
+  .bar-controls {
+    gap: 8px;
+  }
+}
+
+/* ─── Demo page padding ─── */
+.demo-content {
+  padding: 40px 24px;
+  color: #888;
+  text-align: center;
+  font-size: 14px;
+}

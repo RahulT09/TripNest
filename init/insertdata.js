@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
+  require("dotenv").config({ path: "../.env" });
 }
 
 const mongoose = require("mongoose");
@@ -29,4 +29,13 @@ async function initDb() {
   await listing.insertMany(sampleData.data);
 }
 
-initDb();
+main()
+  .then(async () => {
+    console.log("DB connected");
+    await initDb();
+    console.log("Data seeded successfully");
+    mongoose.connection.close(); // close after seeding
+  })
+  .catch((err) => {
+    console.log(err);
+  });

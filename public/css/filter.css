@@ -227,6 +227,9 @@
 }
 
 @media (max-width: 480px) {
+  .btn-filters {
+    display: none;
+  }
   .toggle-wrap {
     display: none;
   }
@@ -235,6 +238,9 @@
   }
   .bar-controls {
     gap: 8px;
+  }
+  .scroll-btn{
+    display: none;
   }
 }
 

@@ -23,11 +23,11 @@ let listingSchema = new schema(
       type: {
         type: String,
         enum: ["Point"], // must be "Point"
-        required: true,
+        
       },
       coordinates: {
         type: [Number], // [longitude, latitude]
-        required: true,
+        
       },
     },
     country: String,

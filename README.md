@@ -5,7 +5,7 @@ A full-stack Airbnb-style rental listing platform where users can discover, list
 🔗 **Live Demo:** [https://tripnest-f53u.onrender.com](https://tripnest-f53u.onrender.com)
 
 ---
-
+    
 ## Tech Stack
 
 | Layer | Technology |

@@ -6,7 +6,7 @@ A full-stack Airbnb-style rental listing platform where users can discover, list
 
 ---
      
-## Tech Stack
+## Tech Stack  
 
 | Layer | Technology |
 |-------|------------|

@@ -16,7 +16,7 @@ A full-stack Airbnb-style rental listing platform where users can discover, list
 | Database | MongoDB + Mongoose |
 | Auth | Passport.js (Local Strategy) |
 | Session Store | connect-mongo |
-| File Upload | Cloudinary + Multer |
+| File Upload | Cloudinary + Multer |  
 | Maps | Mapbox GL JS |
 | Styling | Bootstrap 5 |
 | Deployment | Render |

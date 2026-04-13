@@ -2,7 +2,7 @@
 
 A full-stack Airbnb-style rental listing platform where users can discover, list, and review properties from around the world.
  
-🔗 **Live Demo:** [https://tripnest-f53u.onrender.com](https://tripnest-f53u.onrender.com)  
+🔗 **Live Demo:** [https://tripnest-f53u.onrender.com](https://tripnest-f53u.onrender.com)    
 
 ---
         

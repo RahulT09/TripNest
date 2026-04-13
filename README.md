@@ -141,7 +141,7 @@ App runs at `http://localhost:8080`
 | POST | `/listing` | Create listing |
 | GET | `/listing/:id` | Listing detail |
 | GET | `/listing/:id/edit` | Edit form |
-| PUT | `/listing/:id` | Update listing |
+| PUT | `/listing/:id` | Update listing | 
 | DELETE | `/listing/:id` | Delete listing |
 
 ### Reviews

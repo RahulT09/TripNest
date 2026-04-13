@@ -20,7 +20,7 @@ A full-stack Airbnb-style rental listing platform where users can discover, list
 | Maps | Mapbox GL JS |
 | Styling | Bootstrap 5 |
 | Deployment | Render |
-
+  
 ---
 
 ## Features
